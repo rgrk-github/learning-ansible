@@ -1,0 +1,27 @@
+- name: Demo on conditions
+  hosts: localhost
+  tasks:
+    - name: Print Hello if variable HELLO is defined
+      when: HELLO is defined
+      ansible.builtin.debug:
+        msg: Hello
+
+## Conditions
+# 1. String Comparision
+# when: var == "string"
+# when  var != "string"
+
+# 2. Number
+# when: var == 7
+# when: var > 7
+
+# 3. Boolean
+# when: var
+#### above condition will run if var is true else it will not run
+
+# 4. Variable Declration
+# when: var is defined
+# when: var is not defined
+
+# Multi Conditions
+# when: var is defined and var > 10
