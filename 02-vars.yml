@@ -1,6 +1,8 @@
 - name: demo on vars
   hosts: localhost
+  vars:
+    URL: hello.raj.sample
   tasks:
     - name: print hello
       ansible.builtin.debug:
-        msg: Hello Ans
+        msg: URL {{ URL }}
